@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <!-- a bit styling for error message -->
     <style>
         .error {
             color: #FF0000;
@@ -28,6 +29,14 @@
         }
     }
 
+    /**
+     * Find the closing Parenthesis of selected opening Parenthesis
+     * 
+     * @param string $str
+     * @param int $idx
+     * 
+     * @return array containing index and err message 
+     */
     function find_end_par($str, $idx)
     {
         $strArr = str_split($str);
@@ -37,7 +46,7 @@
             $openPar = 1;
 
             for ($i = ($idx + 1); $i < count($strArr); $i++) {
-                if ($strArr[$i] === "(") { 
+                if ($strArr[$i] === "(") {
                     $openPar++;
                 } else if ($strArr[$i] === ")") {
                     $openPar--;
@@ -57,6 +66,7 @@
     }
     ?>
 
+    <!-- a bit User Interace for testing the function -->
     <h2>Find Closing Parenthesis</h2>
     <p><span class="error">* required field</span></p>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
