@@ -14,7 +14,7 @@
 
     <?php
     $strErr = $idxErr = "";
-    $result = 0;
+    $result = 1;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["string"])) {
